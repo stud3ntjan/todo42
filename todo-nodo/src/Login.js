@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import "./Login.css";
 
 function Login() {
   const [loading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  useEffect(() => {
-    setLoading(false); // Direktes Setzen des Ladezustands auf false
-  }, []);
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       const response = Login;
+
+  //       setData(response);
+  //     }, 2000);
+
+  //   }, []);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -27,7 +37,7 @@ function Login() {
   };
 
   return (
-    <div className="login">
+    <div className="load">
       {loading ? (
         <p>Loading...</p>
       ) : (
